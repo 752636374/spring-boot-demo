@@ -51,39 +51,15 @@
     <build>
         <!-- 这里设置构建的文件名；默认情况下文件名为：artifactId+version -->
         <finalName>spring-boot-demo</finalName>
-        <!-- 构建产生的所有的文件存放的目录；默认情况下为根目录下的target文件夹，即：${basedir}/target -->
-        <directory>${basedir}/target/</directory>
-        <!-- 配置要使用的filter文件，这个要配合<resources/>来使用-->
-        <filters>
-            <!-- 配置要使用的filter文件的路径，用于替换掉含有变量定义的文件；常用于多环境配置多个配置文件的情况 -->
-            <filter>src/main/conf/profiles/application-${env}.yaml</filter>
-        </filters>
-
-        <!-- 用于定义哪些目录下的文件会被filters中指定的filter文件进行变量的替换 -->
         <resources>
             <resource>
-                <!-- 这里设定要替换内容的文件所在的文件夹，即：src/main/resources -->
-                <directory>src/main/resources</directory>
-                <!-- 启用过滤器 -->
+                <!--配置文件路径  -->
+                <directory>src/main/resources</directory> <!--这里对应项目存放配置文件的目录-->
+                <!--开启filtering功能  -->
                 <filtering>true</filtering>
-                <!-- 替换那些类型的源文件 -->
-                <includes>
-                    <!--
-                        配置多个需要替换的原资源文件时， 需要配置多个include
-                        *.xml:当前目录下以xml结尾的文件
-                        **/*.xml:当前目录及其子目录下以xml结尾的文件
-                     -->
-                    <include>**/*.xml</include>
-                    <include>**/*.conf</include>
-                </includes>
-                <!-- 不需要替换的源文件类型，打包后的classes目录下没有该文件 -->
-                <excludes>
-                    <exclude>**/*.hib.conf</exclude>
-                </excludes>
-                <!-- 打包后资源文件存放的位置 -->
-                <!--  <targetPath>config</targetPath>-->
             </resource>
         </resources>
+
         <plugins>
             <!-- 插件配置 -->
             <plugin>
