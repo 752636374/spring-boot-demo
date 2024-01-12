@@ -75,7 +75,6 @@
                      -->
                     <include>**/*.xml</include>
                     <include>**/*.conf</include>
-                    <include>**/*.yaml</include>
                 </includes>
                 <!-- 不需要替换的源文件类型，打包后的classes目录下没有该文件 -->
                 <excludes>
@@ -113,6 +112,16 @@
             <id>docker</id>
             <properties>
                 <env>docker</env>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <!-- docker环境 -->
+        <profile>
+            <id>local</id>
+            <properties>
+                <env>local</env>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>

@@ -1,15 +1,11 @@
 server:
-  port: ${server.port}
-
+  port: 8081
 spring:
   application:
     name: spring-boot-demo
-  profiles:
-    active: ${spring.profiles.active}
-
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://127.0.1.1:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
