@@ -6,4 +6,3 @@ spring:
       profile: dev
       label: main
       fail-fast: true
-

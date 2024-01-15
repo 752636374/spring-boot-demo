@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      name: spring-boot-demo
+      uri: http://127.0.0.1:9001
+      profile: dev
+      label: main
+      fail-fast: true

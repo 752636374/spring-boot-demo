@@ -10,7 +10,10 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/
 management:
+  endpoint:
+    shutdown:
+      enabled: false
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: "*"
